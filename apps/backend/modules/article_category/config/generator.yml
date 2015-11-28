@@ -1,0 +1,25 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           article_category
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          article_category
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    
+        title:              "Kategorie artykułów"
+        display:            [_name, hidden]
+      filter:  
+        class:              false
+      form:    ~
+      edit:    ~
+      new:     
+        title:              "Nowa kategoria"

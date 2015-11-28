@@ -1,0 +1,29 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           attribute_def
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          attribute_def
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        module:           { label: Moduł }
+        parent_id:        { label: Id rodzica }
+        name:             { label: Nazwa }
+        description:      { label: Opis }
+        type_id:          { label: Typ }
+      list:    
+        title:            Lista Atrybutów
+        display:          [_name, _description, _type_id]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     
+        title:            Dodaj nowy atrybut

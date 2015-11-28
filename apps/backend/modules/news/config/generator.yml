@@ -1,0 +1,27 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           news
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          news
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        date_from:        {label: "Data publikacji", date_format: 'dd-MM-yyyy'}
+        hidden:           {label: "Ukryta"}
+      list:    
+        display:          [_title, date_from, hidden]
+        title:            "Lista aktualności"
+      filter:  
+        class:            false
+      form:    ~
+      edit:    ~
+      new:     
+        title:            "Nowa aktualność"

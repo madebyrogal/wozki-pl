@@ -1,0 +1,29 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           media_size
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          media_size
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        module_cms_id:        { label: Moduł }
+        min1:                 { label: Miniatura 1, help: Wymagany format zapisu - 192x168 }
+        min2:                 { label: Miniatura 2, help: Wymagany format zapisu - 192x168 }
+        min3:                 { label: Miniatura 3, help: Wymagany format zapisu - 192x168 }
+      list:    
+        title:                Media - rozmiary
+        display:              [module_cms, min1, min2, min3]
+      filter:  
+        class:                false
+      form:    ~
+      edit:    ~
+      new:     
+        title:                Tworzenie nowego wzorca rozmiarów

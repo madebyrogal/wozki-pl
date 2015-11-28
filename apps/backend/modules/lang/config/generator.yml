@@ -1,0 +1,29 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           lang
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          lang
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        name:               { label: Nazwa }
+        flag:               { label: Obraz flagi }
+        slug:               { label: Skrót }
+        hidden:             { label: Ukryty }
+      list:
+        title:              Języki
+        display:            [name, _flag, slug, hidden]
+      filter:  
+        class:              false
+      form:    ~
+      edit:    ~
+      new:     
+        title:              Dodaj nowy język

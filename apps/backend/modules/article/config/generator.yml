@@ -1,0 +1,30 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           article
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          article
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        date_from:            {label: "Data publikacji", date_format: dd-MM-yyyy}
+        article_category_id:  {label: "Kategoria"}
+        category:             {label: "Kategoria"}
+        hidden:               {label: "Ukryty"}
+        author:               {label: "Autor"}
+      list:    
+        title:                "Lista artykułów"
+        display:              [_title,category,author,date_from,hidden]
+      filter:  
+        class:                false
+      form:    ~
+      edit:    ~
+      new:     
+        title:                "Nowy artykuł"

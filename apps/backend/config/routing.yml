@@ -1,0 +1,245 @@
+gallery_1:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                gallery_1
+    module:               gallery_1
+    prefix_path:          /gallery_1
+    column:               id
+    with_wildcard_routes: true
+
+author:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                author
+    module:               author
+    prefix_path:          /author
+    column:               id
+    with_wildcard_routes: true
+
+article_category:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                article_category
+    module:               article_category
+    prefix_path:          /article_category
+    column:               id
+    with_wildcard_routes: true
+
+article:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                article
+    module:               article
+    prefix_path:          /article
+    column:               id
+    with_wildcard_routes: true
+
+news:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                news
+    module:               news
+    prefix_path:          /news
+    column:               id
+    with_wildcard_routes: true
+
+media_size:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                media_size
+    module:               media_size
+    prefix_path:          /media_size
+    column:               id
+    with_wildcard_routes: true
+
+attribute_value:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                attribute_value
+    module:               attribute_value
+    prefix_path:          /attribute_value
+    column:               id
+    with_wildcard_routes: true
+
+attribute_value_list:
+  url:                    attribute_value/list/:product_id
+  param:                  { module: attribute_value, action: index }
+  
+product:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                product
+    module:               product
+    prefix_path:          /product
+    column:               id
+    with_wildcard_routes: true
+
+attribute_def_value:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                attribute_def_value
+    module:               attribute_def_value
+    prefix_path:          /attribute_def_value
+    column:               id
+    with_wildcard_routes: true
+
+attribute_def_value_list:
+  url:                    attribute_def_value/list/:parent_id
+  param:                  { module: attribute_def_value, action: index }
+  
+attribute_type:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                attribute_type
+    module:               attribute_type
+    prefix_path:          /attribute_type
+    column:               id
+    with_wildcard_routes: true
+
+attribute_def:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                attribute_def
+    module:               attribute_def
+    prefix_path:          /attribute_def
+    column:               id
+    with_wildcard_routes: true
+
+attribute_def_list:
+  url:                    attribute_def/list/:parent_id/:moduleName
+  param:                  { module: attribute_def, action: index }
+
+product_categories:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                product_categories
+    module:               product_categories
+    prefix_path:          /product_categories
+    column:               id
+    with_wildcard_routes: true
+
+meta_tag:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                meta_tag
+    module:               meta_tag
+    prefix_path:          /meta_tag
+    column:               id
+    with_wildcard_routes: true
+
+meta_tag:
+  url:                    meta_tag/list/:parent_id/:moduleName
+  param:                  { module: meta_tag, action: index }
+  
+attachment:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                attachment
+    module:               attachment
+    prefix_path:          /attachment
+    column:               id
+    with_wildcard_routes: true
+
+attachment_list:
+  url:                    attachment/list/:parent_id/:moduleName
+  param:                  { module: attachment, action: index }
+  
+media:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                media
+    module:               media
+    prefix_path:          /media
+    column:               id
+    with_wildcard_routes: true
+
+media_list:
+  url:                    media/list/:parent_id/:moduleName
+  param:                  { module: media, action: index }
+
+module_cms:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                module_cms
+    module:               module_cms
+    prefix_path:          /module_cms
+    column:               id
+    with_wildcard_routes: true
+
+module_group:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                module_group
+    module:               module_group
+    prefix_path:          /module_group
+    column:               id
+    with_wildcard_routes: true
+
+lang:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                lang
+    module:               lang
+    prefix_path:          /lang
+    column:               id
+    with_wildcard_routes: true
+
+text:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                text
+    module:               text
+    prefix_path:          /text
+    column:               id
+    with_wildcard_routes: true
+
+text_list:
+  url:                    text/list/:parent_id/:moduleName
+  param:                  { module: text, action: index }
+
+page:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                page
+    module:               page
+    prefix_path:          /page
+    column:               id
+    with_wildcard_routes: true
+
+homepage:
+  url:   /
+  param: { module: main, action: index }
+  
+publicChange:
+  url:   /publikuj-zmiany
+  param: { module: main, action: publicChange }
+  
+change_lang:
+  url:     /:slug/changeLang/
+  class:   sfDoctrineRoute
+  options: { model: lang, type: object }
+  param:   { module: main, action: changeLang }
+  
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }
+
+sf_guard_user:
+  url:   /sf_guard_user
+  param: { module: sfGuardUser, action: index }
+
+sf_guard_group:
+  url:   /sf_guard_group
+  param: { module: sfGuardGroup, action: index }
+
+sf_guard_permission:
+  url:   /sf_guard_permission
+  param: { module: sfGuardPermission, action: index }

@@ -1,0 +1,27 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           attribute_def_value
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          attribute_def_value
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _new:             { label: Dodaj wartość }
+      fields:  
+        attribute_def_id: { label: Id atrybutu }
+        value:            { label: Wartość }
+      list:    
+        title:            Lista
+        display:          [value]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     
+        title:            Dodaj nową wartość atrybutu

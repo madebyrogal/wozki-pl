@@ -1,0 +1,9 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  max_news_on_page:           3
+  max_article_on_page:        3
+  max_product_on_page:        20
+  max_media_on_page:          24

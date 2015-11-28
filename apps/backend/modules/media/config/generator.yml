@@ -1,0 +1,31 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           media
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          media
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        main:             { label: "Główny obrazek"}
+        title:            { label: "Tytuł"}
+        alternative:      { label: "Tekst alternatywny"}
+        file:             { label: "Plik"}
+        file_min1:        { label: "Miniatura 1", help: "Uwaga! Jeżeli pozostawisz to pole puste, miniatura wygeneruje się automatycznie"}
+        file_min2:        { label: "Miniatura 2", help: "Uwaga! Jeżeli pozostawisz to pole puste, miniatura wygeneruje się automatycznie"}
+        file_min3:        { label: "Miniatura 3", help: "Uwaga! Jeżeli pozostawisz to pole puste, miniatura wygeneruje się automatycznie"}
+      list:    
+        display:          [_file, main]
+      filter:  
+        display:          [module]
+      form:    ~
+      edit:    ~
+      new:     
+        title:            Dodaj nowe media

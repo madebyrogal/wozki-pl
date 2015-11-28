@@ -1,0 +1,26 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           module_group
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          module_group
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        name:               { label: Nazwa }
+        hidden:             { label: Ukryty }
+      list:    
+        title:              Grupy modułów
+        display:            [name, hidden]
+      form:    
+        display:            [name, hidden, permission_list] 
+      edit:    ~
+      new:     
+        title:              Dodaj nową grupę

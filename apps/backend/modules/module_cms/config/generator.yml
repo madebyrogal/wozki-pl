@@ -1,0 +1,29 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           module_cms
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          module_cms
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        name:               { label: Nazwa }
+        route_name:         { label: Nazwa routingu }
+        module_group_id:    { label: Grupa }
+        hidden:             { label: Ukryty }
+        permission_list:    { label: Uprawnienia }
+      list:    
+        title:              Moduły
+        display:            [ name, route_name, module_group, hidden]
+      form:    
+        display:            [ name, route_name, module_group_id, permission_list, hidden ]
+      edit:    ~
+      new:     
+        title:              Dodaj nowy moduł

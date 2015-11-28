@@ -1,0 +1,34 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           product_categories
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          product_categories
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _new:             { credentials: admin }
+      fields:  
+        name:             { label: Nazwa }
+        parent_id:        { label: Kategoria nadrzędna }
+        hidden:           { label: Ukryta }
+      list:
+        title:            Kategorie
+        display:          [name, _parent_id]
+        object_actions:
+          _edit:          ~
+          _delete:        ~
+        batch_actions:    {}
+      filter:  
+        class:            false
+      form:    
+        display:          ~
+      edit: ~
+      new:     
+        title:            Dodaj nową kategorię

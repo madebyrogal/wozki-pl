@@ -1,0 +1,35 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           attribute_value
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          attribute_value
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _new:
+      fields:  
+        attribute_def:      { label: "Nazwa atrybutu" }
+        attribute_def_value_id: { label: "Wartość" }
+        value:              { label: "Wartość" }
+      list:    
+        title:              Atrybuty produktu
+        display:            [attribute_def, _value]
+        actions:            []
+        batch_actions:      []
+        object_actions:
+          _edit:            ~
+      filter:  ~  
+      form:    
+        actions:
+          _list:            ~
+          _save:            ~
+      edit:    
+        title:              Edytujesz atrybut - %%attribute_def%%
+      new:     ~

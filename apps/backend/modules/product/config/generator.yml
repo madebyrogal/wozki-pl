@@ -1,0 +1,33 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           product
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          product
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _new:             { label: Dodaj produkt }
+      fields:  
+        category_id:      { label: Kategoria }
+        name:             { label: Nazwa }
+        info:             { label: Informacja/Opis }
+        price:            { label: Cena }
+        promotion:        { label: Promocja }
+        hidden:           { label: Ukryty }
+      list:    
+        title:            Produkty
+        display:          [name, category, price, hidden]
+      filter:  
+        class:            false
+      form:    ~
+      edit:    
+        title:            Edycja produktu - %%name%%
+      new:     
+        title:            Dodaj nowy produkt

@@ -1,0 +1,38 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           page
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          page
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _new:             { credentials: admin }
+      fields:  
+        layout:           { label: Layout }
+        route_name:       { label: Nazwa routingu }
+        parent_id:        { label: Rodzic }
+        hidden:           { label: Ukryta }
+        not_in_menu:      { label: Poza menu }
+      list:    
+        title:            Strony
+        display:          [_title, parent, hidden, not_in_menu]
+        object_actions:
+          promote:        { label: "Up"}
+          demote:         { label: "Down"}
+          _edit:          ~
+          _delete:        { credentials: admin }
+        batch_actions:    {}
+      filter:  
+        class:            false
+      form:    
+        display:          ~
+      edit: ~
+      new:     
+        title:            Dodaj nową stronę

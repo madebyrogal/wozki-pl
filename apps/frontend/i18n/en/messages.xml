@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="PL" target-language="en" datatype="plaintext" original="messages" date="2013-03-23T11:15:46Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>zapisz</source>
+        <target>save</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>wypisz</source>
+        <target>sign out</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Twój e-mail</source>
+        <target>Your e-mail address</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Powrót</source>
+        <target>Return</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>more</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Autor</source>
+        <target>Author</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Skontaktuj się z nami</source>
+        <target>Contact us</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Lokalizacja zobacz mapę</source>
+        <target>Location View Map</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>O wózkach</source>
+        <target>About forklifts</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>wiemy wszystko!</source>
+        <target>know everything!</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Zobacz ofertę</source>
+        <target>See offer</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Gorące oferty!</source>
+        <target>Hot deals!</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>Sprawdź ofertę specjalną na nasze wózki widłowe</source>
+        <target>Check out our special offer forklifts</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>Newsletter</source>
+        <target>Newsletter</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Powrót do listy</source>
+        <target>Back to list</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Informacje dodatkowe</source>
+        <target>Additional information</target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>MARKA</source>
+        <target>brand</target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>TYP</source>
+        <target>Type</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>UDŹWIG</source>
+        <target>Capacity</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>NAPĘD</source>
+        <target>drive</target>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>WYS. PODNOSZEN</source>
+        <target>height</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>PRZEBIEG</source>
+        <target>course</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>Brak produktów w danej kategorii</source>
+        <target>There are no products in this category</target>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>gorące oferty</source>
+        <target>hot deals</target>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>Dane techniczne</source>
+        <target>Specifications</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>Przykro nam, brak danych</source>
+        <target>Sorry, no data</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>Wyniki wyszukiwania</source>
+        <target>Search results</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>Szukaj</source>
+        <target>Search</target>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>PLN</source>
+        <target>EUR</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

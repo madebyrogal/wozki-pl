@@ -1,0 +1,29 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           gallery_1
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          gallery_1
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+          _new:             { label: Dodaj galerię }
+      fields: 
+          name:             { label: Nazwa }
+          hidden:           { label: Ukryta }
+      list:    
+          title:            Galerie
+          display:          [ name, hidden]
+          batch_actions:    {}
+      filter:  ~
+      form:    ~
+      edit: 
+        title:              Edycja galerii - %%name%%
+      new:     
+        title:              Dodaj nową galerię

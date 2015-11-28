@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    #title:        symfony project
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:    [style.css, prettyPhoto/prettyPhoto.css]
+
+  javascripts:    [jquery.js, main.js, prettyPhoto/jquery.prettyPhoto.js, cookie/jquery.cookie.js, google_analitycs.js]
+
+  has_layout:     true
+  layout:         layout
