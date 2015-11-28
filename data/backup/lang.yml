@@ -1,0 +1,29 @@
+lang:
+  lang_pl:
+    name:           polski
+    flag:           /useruploads/images/flagi/flaga_pl.gif
+    slug:           pl
+  lang_de:
+    name:           niemiecki
+    flag:           /useruploads/images/flagi/flaga_de.gif
+    slug:           de
+  lang_en:
+    name:           angielski
+    flag:           /useruploads/images/flagi/flaga_en.gif
+    slug:           en
+  lang_fr:
+    name:           francuski
+    flag:           /useruploads/images/flagi/flaga_fr.gif
+    slug:           fr
+  lang_cz:
+    name:           czeski
+    flag:           /useruploads/images/flagi/flaga_cz.gif
+    slug:           cz
+  lang_it:
+    name:           włoski
+    flag:           /useruploads/images/flagi/flaga_it.gif
+    slug:           it
+  lang_no:
+    name:           norweski
+    flag:           /useruploads/images/flagi/flaga_no.gif
+    slug:           no

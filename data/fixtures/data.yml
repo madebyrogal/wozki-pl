@@ -1,0 +1,530 @@
+attribute_def:
+  attribute_def_1:
+    module: product_categories
+    parent_id: '1'
+    name: Typ
+    description: 'Typ wózka widłowego'
+    attribute_type: attribute_type_1
+  attribute_def_2:
+    module: product_categories
+    parent_id: '1'
+    name: 'Rok produkcji'
+    description: 'Rok produkcji wózka'
+    attribute_type: attribute_type_1
+  attribute_def_3:
+    module: product_categories
+    parent_id: '1'
+    name: Udźwig
+    description: 'Udźwig [kg]'
+    attribute_type: attribute_type_1
+  attribute_def_4:
+    module: product_categories
+    parent_id: '1'
+    name: 'Wysokość masztu'
+    description: 'Wysokość masztu [cm]'
+    attribute_type: attribute_type_1
+  attribute_def_5:
+    module: product_categories
+    parent_id: '1'
+    name: 'Wysokość podnoszenia'
+    description: 'Wysokość podnoszenia [cm]'
+    attribute_type: attribute_type_1
+  attribute_def_6:
+    module: product_categories
+    parent_id: '1'
+    name: 'Rodzaj masztu'
+    description: 'Rodzaj masztu wózka'
+    attribute_type: attribute_type_2
+  attribute_def_8:
+    module: product_categories
+    parent_id: '2'
+    name: 'Rodzaj napędu'
+    description: 'Rodzaj napędu wózka'
+    attribute_type: attribute_type_2
+  attribute_def_9:
+    module: product_categories
+    parent_id: '3'
+    name: 'Rodzaj napędu'
+    description: 'Rodzaj napędu wózka'
+    attribute_type: attribute_type_2
+  attribute_def_10:
+    module: product_categories
+    parent_id: '4'
+    name: 'Rodzaj napędu'
+    description: 'Rodzaj napędu wózka'
+    attribute_type: attribute_type_2
+attribute_def_value:
+  attribute_def_value_1:
+    attribute_def: attribute_def_6
+    value: simplex
+  attribute_def_value_2:
+    attribute_def: attribute_def_6
+    value: duplex
+  attribute_def_value_3:
+    attribute_def: attribute_def_6
+    value: triplex
+  attribute_def_value_4:
+    attribute_def: attribute_def_6
+    value: quatro
+  attribute_def_value_8:
+    attribute_def: attribute_def_8
+    value: Diesel
+  attribute_def_value_9:
+    attribute_def: attribute_def_9
+    value: Gaz
+  attribute_def_value_10:
+    attribute_def: attribute_def_10
+    value: Elektryczny
+attribute_type:
+  attribute_type_1:
+    name: value
+  attribute_type_2:
+    name: single
+  attribute_type_3:
+    name: multiple
+lang:
+  lang_1:
+    name: polski
+    flag: /useruploads/images/flagi/flaga_pl.gif
+    slug: pl_PL
+    hidden: false
+    position: '1'
+  lang_2:
+    name: niemiecki
+    flag: /useruploads/images/flagi/flaga_de.gif
+    slug: de_DE
+    hidden: true
+    position: '2'
+  lang_3:
+    name: angielski
+    flag: /useruploads/images/flagi/flaga_en.gif
+    slug: en_EN
+    hidden: false
+    position: '3'
+  lang_4:
+    name: francuski
+    flag: /useruploads/images/flagi/flaga_fr.gif
+    slug: fr_FR
+    hidden: true
+    position: '4'
+  lang_5:
+    name: czeski
+    flag: /useruploads/images/flagi/flaga_cz.gif
+    slug: cz_CZ
+    hidden: true
+    position: '5'
+  lang_6:
+    name: włoski
+    flag: /useruploads/images/flagi/flaga_it.gif
+    slug: it_IT
+    hidden: true
+    position: '6'
+  lang_7:
+    name: norweski
+    flag: /useruploads/images/flagi/flaga_no.gif
+    slug: no_NO
+    hidden: true
+    position: '7'
+module_cms:
+  module_cms_1:
+    name: Strony
+    route_name: page
+    module_group: module_group_1
+    lang: lang_1
+    hidden: false
+    position: '1'
+  module_cms_2:
+    name: Języki
+    route_name: lang
+    module_group: module_group_2
+    lang: lang_1
+    hidden: false
+    position: '2'
+  module_cms_3:
+    name: Strony
+    route_name: page
+    module_group: module_group_3
+    lang: lang_3
+    hidden: false
+    position: '3'
+  module_cms_4:
+    name: Języki
+    route_name: lang
+    module_group: module_group_4
+    lang: lang_3
+    hidden: false
+    position: '4'
+  module_cms_5:
+    name: Kategorie
+    route_name: product_categories
+    module_group: module_group_5
+    lang: lang_1
+    hidden: false
+    position: '5'
+  module_cms_6:
+    name: Grupy
+    route_name: sf_guard_group
+    module_group: module_group_6
+    lang: lang_1
+    hidden: false
+    position: '6'
+  module_cms_7:
+    name: Użytkownicy
+    route_name: sf_guard_user
+    module_group: module_group_6
+    lang: lang_1
+    hidden: false
+    position: '7'
+  module_cms_8:
+    name: Uprawnienia
+    route_name: sf_guard_permission
+    module_group: module_group_6
+    lang: lang_1
+    hidden: false
+    position: '8'
+  module_cms_9:
+    name: Produkty
+    route_name: product
+    module_group: module_group_5
+    lang: lang_1
+    hidden: false
+    position: '9'
+module_group:
+  module_group_1:
+    name: Strony
+    lang: lang_1
+    hidden: false
+    position: '1'
+  module_group_2:
+    name: Ustawienia
+    lang: lang_1
+    hidden: false
+    position: '2'
+  module_group_3:
+    name: Strony
+    lang: lang_3
+    hidden: false
+    position: '3'
+  module_group_4:
+    name: Ustawienia
+    lang: lang_3
+    hidden: true
+    position: '4'
+  module_group_5:
+    name: Produkty
+    lang: lang_1
+    hidden: false
+    position: '5'
+  module_group_6:
+    name: Użytkownicy
+    lang: lang_1
+    hidden: false
+    position: '6'
+module_group_permission:
+  module_group_permission_1:
+    module_group: module_group_5
+    permission: sfGuardPermission_1
+  module_group_permission_2:
+    module_group: module_group_5
+    permission: sfGuardPermission_2
+  module_group_permission_3:
+    module_group: module_group_6
+    permission: sfGuardPermission_1
+module_permission:
+  module_permission_1:
+    module_cms: module_cms_5
+    permission: sfGuardPermission_1
+  module_permission_2:
+    module_cms: module_cms_5
+    permission: sfGuardPermission_2
+  module_permission_3:
+    module_cms: module_cms_6
+    permission: sfGuardPermission_1
+  module_permission_4:
+    module_cms: module_cms_7
+    permission: sfGuardPermission_1
+  module_permission_5:
+    module_cms: module_cms_8
+    permission: sfGuardPermission_1
+  module_permission_6:
+    module_cms: module_cms_9
+    permission: sfGuardPermission_1
+  module_permission_7:
+    module_cms: module_cms_9
+    permission: sfGuardPermission_2
+page:
+  page_1:
+    title: TŁUMACZENIA
+    subtitle: 'Teaching and translations'
+    meta_title: 'Tłumaczenia - Teaching and translations'
+    meta_keywords: 'Tłumaczenia - Teaching and translations'
+    meta_description: 'Tłumaczenia - Teaching and translations'
+    template: index
+    route_name: translations
+    hidden: false
+    lang: lang_1
+    position: '1'
+    slug: tlumaczenia
+  page_2:
+    title: 'NAKŁADANIE GŁOSU'
+    subtitle: 'Teaching and translations'
+    meta_title: 'Nagrywanie głosu - Teaching and translations'
+    meta_keywords: 'Nagrywanie głosu - Teaching and translations'
+    meta_description: 'Nagrywanie głosu - Teaching and translations'
+    template: index
+    route_name: voice_recording
+    hidden: false
+    lang: lang_1
+    position: '2'
+    slug: nakladanie-glosu
+  page_3:
+    title: 'NAUKA JĘZYKA<br/> ANGIELSKIEGO'
+    subtitle: 'Teaching and translations'
+    meta_title: 'Nauka języka angielskiego - Teaching and translations'
+    meta_keywords: 'Nauka języka angielskiego - Teaching and translations'
+    meta_description: 'Nauka języka angielskiego - Teaching and translations'
+    template: index
+    route_name: 'teaching '
+    hidden: false
+    lang: lang_1
+    position: '3'
+    slug: nauka-jezyka-br-angielskiego
+  page_4:
+    title: KONTAKT
+    subtitle: 'Teaching and translations'
+    meta_title: 'Kontakt - Teaching and translations'
+    meta_keywords: 'Kontakt - Teaching and translations'
+    meta_description: 'Kontakt - Teaching and translations'
+    template: index
+    route_name: contact
+    hidden: false
+    lang: lang_1
+    position: '4'
+    slug: kontakt
+  page_5:
+    title: TRANSLATION
+    subtitle: 'Teaching and translations'
+    meta_title: 'Tłumaczenia - Teaching and translations'
+    meta_keywords: 'Tłumaczenia - Teaching and translations'
+    meta_description: 'Tłumaczenia - Teaching and translations'
+    template: index
+    route_name: translations
+    hidden: false
+    lang: lang_3
+    position: '5'
+    slug: translation
+  page_6:
+    title: VOICE-OVER
+    subtitle: 'Teaching and translations'
+    meta_title: 'Nagrywanie głosu - Teaching and translations'
+    meta_keywords: 'Nagrywanie głosu - Teaching and translations'
+    meta_description: 'Nagrywanie głosu - Teaching and translations'
+    template: index
+    route_name: voice_recording
+    hidden: false
+    lang: lang_3
+    position: '6'
+    slug: voice-over
+  page_7:
+    title: TEACHING
+    subtitle: 'Teaching and translations'
+    meta_title: 'Nauka języka angielskiego - Teaching and translations'
+    meta_keywords: 'Nauka języka angielskiego - Teaching and translations'
+    meta_description: 'Nauka języka angielskiego - Teaching and translations'
+    template: index
+    route_name: 'teaching '
+    hidden: false
+    lang: lang_3
+    position: '7'
+    slug: teaching
+  page_8:
+    title: CONTACT
+    subtitle: 'Teaching and translations'
+    meta_title: 'Kontakt - Teaching and translations'
+    meta_keywords: 'Kontakt - Teaching and translations'
+    meta_description: 'Kontakt - Teaching and translations'
+    template: index
+    route_name: contact
+    hidden: false
+    lang: lang_3
+    position: '8'
+    slug: contact
+product:
+  product_1:
+    category: product_categories_2
+    name: 'Wózek widłowy 1'
+    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    price: '20000'
+    hidden: false
+    lang: lang_1
+    position: '1'
+  product_2:
+    category: product_categories_3
+    name: 'Wózek widłowy 2'
+    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    price: '15000'
+    hidden: false
+    lang: lang_1
+    position: '1'
+  product_3:
+    category: product_categories_4
+    name: 'Wózek widłowy 3'
+    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    price: '12000'
+    hidden: false
+    lang: lang_1
+    position: '1'
+  product_4:
+    category: product_categories_2
+    name: 'Wózek widłowy 4'
+    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    price: '18000'
+    hidden: false
+    lang: lang_1
+    position: '2'
+product_categories:
+  product_categories_1:
+    name: 'Wózki widłowe'
+    lang: lang_1
+    position: '1'
+  product_categories_2:
+    name: Diesla
+    parent: product_categories_1
+    lang: lang_1
+    position: '1'
+  product_categories_3:
+    name: Gazowe
+    parent: product_categories_1
+    lang: lang_1
+    position: '2'
+  product_categories_4:
+    name: Elektryczne
+    parent: product_categories_1
+    lang: lang_1
+    position: '3'
+sfGuardGroup:
+  sfGuardGroup_1:
+    name: admin
+    description: 'Administrator group'
+    created_at: '2012-11-14 20:33:25'
+    updated_at: '2012-11-14 20:33:25'
+  sfGuardGroup_2:
+    name: user
+    description: 'User group'
+    created_at: '2012-11-14 20:33:26'
+    updated_at: '2012-11-14 20:33:26'
+sfGuardGroupPermission:
+  sfGuardGroupPermission_1_1:
+    Group: sfGuardGroup_1
+    Permission: sfGuardPermission_1
+    created_at: '2012-11-14 20:33:25'
+    updated_at: '2012-11-14 20:33:25'
+  sfGuardGroupPermission_2_2:
+    Group: sfGuardGroup_2
+    Permission: sfGuardPermission_2
+    created_at: '2012-11-14 20:33:26'
+    updated_at: '2012-11-14 20:33:26'
+sfGuardPermission:
+  sfGuardPermission_1:
+    name: admin
+    description: 'Administrator permission'
+    created_at: '2012-11-14 20:33:25'
+    updated_at: '2012-11-14 20:33:25'
+  sfGuardPermission_2:
+    name: user
+    description: 'User permission'
+    created_at: '2012-11-14 20:33:26'
+    updated_at: '2012-11-14 20:33:26'
+sfGuardUser:
+  sfGuardUser_1:
+    first_name: Tomasz
+    last_name: Rogalski
+    email_address: rogalski.tomaszek@gmail.com
+    username: admin
+    algorithm: sha1    
+    password: sl0neczko
+    is_active: true
+    is_super_admin: true
+    last_login: '2012-12-02 10:57:34'
+    created_at: '2012-11-14 20:33:26'
+    updated_at: '2012-12-02 10:57:34'
+  sfGuardUser_2:
+    first_name: Leszek
+    last_name: Węgrzeniejewski
+    email_address: wozkistrzalkowo@gmail.com
+    username: user
+    algorithm: sha1    
+    password: user
+    is_active: true
+    is_super_admin: false
+    last_login: null
+    created_at: '2012-11-14 20:33:26'
+    updated_at: '2012-11-14 20:33:26'
+sfGuardUserGroup:
+  sfGuardUserGroup_1_1:
+    User: sfGuardUser_1
+    Group: sfGuardGroup_1
+    created_at: '2012-11-14 20:33:26'
+    updated_at: '2012-11-14 20:33:26'
+  sfGuardUserGroup_2_2:
+    User: sfGuardUser_2
+    Group: sfGuardGroup_2
+    created_at: '2012-11-14 20:33:26'
+    updated_at: '2012-11-14 20:33:26'
+text:
+  text_1:
+    module: page
+    parent_id: '1'
+    title: Tłumaczenia
+    context: "<p><b>Specjalizacja:</b> umowy prawne i handlowe, statuty, umowy sp&oacute;łki, sprawozdania finansowe, bilanse, korespondencja biznesowa, prawo, ekonomia, Unia Europejska, literatura, turystyka.</p>\r\n<p><b>Inne:</b> geografia, historia, kultura i sztuka, administracja, bankowość, finanse, umowy, CV, CL, informatyka, marketing/reklama, polityka, przyroda, ochrona środowiska, rozrywka, sport.</p>\r\n<table class=\"info\">\r\n<tbody>\r\n<tr>\r\n<td colspan=\"2\">Tłumaczenia pisemne</td>\r\n</tr>\r\n<tr>\r\n<td>Angielski -&gt; Polski</td>\r\n<td>Polski -&gt; Angielski</td>\r\n</tr>\r\n<tr>\r\n<td>25 PLN</td>\r\n<td>27 PLN</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>Ceny za stronę przeliczeniową tekstu przetłumaczonego - 1800 znak&oacute;w ze spacjami.<br /> Wszystkie ceny są do negocjacji. Mogą one ulec zmianie w zależności od rodzaju tekstu i terminu ukończenia. Szczeg&oacute;ły do uzgodnienia przed rozpoczęciem tłumaczenia.</p>\r\n<table class=\"info\">\r\n<tbody>\r\n<tr>\r\n<td colspan=\"3\">Tłumaczenia ustne</td>\r\n</tr>\r\n<tr>\r\n<td>60 minut</td>\r\n<td>Od 2 do 4 godzin</td>\r\n<td>Ponad 4 godziny</td>\r\n</tr>\r\n<tr>\r\n<td>120 PLN</td>\r\n<td>100 PLN</td>\r\n<td>Cena do negocjacji</td>\r\n</tr>\r\n</tbody>\r\n</table>"
+    hidden: false
+    position: '1'
+  text_2:
+    module: page
+    parent_id: '2'
+    title: 'Nakładanie głosu'
+    context: '<p>Szukacie Państwo lektora do tekstu? filmu? na stronę www? Udzielam głosu do wszelkiego rodzaju podkład&oacute;w, zar&oacute;wno w języku polskim, jak i angielskim (akcent Brytyjski). Mogę użyczyć głosu do reklam, prezentacji, film&oacute;w, program&oacute;w komputerowych, stron www i innych. Koszt nagrania do uzgodnienia.</p>'
+    hidden: false
+    position: '2'
+  text_3:
+    module: page
+    parent_id: '3'
+    title: Nauczanie
+    context: "<p>Nauka zawsze dostosowana jest do umiejętności językowych ucznia oraz jego/jej potrzeb.</p>\r\n<table class=\"info\">\r\n<tbody>\r\n<tr>\r\n<td colspan=\"2\">Nauka języka angielskiego</td>\r\n</tr>\r\n<tr>\r\n<td>60 min</td>\r\n<td>90 min</td>\r\n</tr>\r\n<tr>\r\n<td>50 PLN</td>\r\n<td>60 PLN</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>W zależności od rodzaju korepetycji ceny mogą ulec zmianie. Szczeg&oacute;ły do uzgodnienia przed rozpoczęciem nauki. Zajęcia odbywają się w domu klienta, lub we wcześniej uzgodnionym miejscu.</p>"
+    hidden: false
+    position: '3'
+  text_4:
+    module: page
+    parent_id: '4'
+    title: Kontakt
+    context: '<p>T''n''T Teaching and Translations<br /> Aleksandra Gajewska<br /> email: <a title="Napisz do mnie" href="mailto:gajewska7@gmail.com?subject=Zapytanie ze strony t-n-t.pl">gajewska7@gmail.com</a><br /> telefon: +48 508 449 761<br /> Szczecin</p>'
+    hidden: false
+    position: '4'
+  text_5:
+    module: page
+    parent_id: '5'
+    title: Translation
+    context: "<p><b>Fields of expertise:</b> contracts and agreements, statutes, cooperation agreements, financial statements, business correspondence, law, economy, literature, tourism, photography.</p>\r\n<p><b>Other:</b> geography, history, art and culture, administration, banking, finances, CV, CL, marketing, advertisement, politics, wildlife, environmental conservation, entertainment, sport, European Union, cinema, television, theatre.</p>\r\n<table class=\"info\">\r\n<tbody>\r\n<tr>\r\n<td colspan=\"2\">Translation rates</td>\r\n</tr>\r\n<tr>\r\n<td>English -&gt; Polish</td>\r\n<td>Polish -&gt; English</td>\r\n</tr>\r\n<tr>\r\n<td>6 EUR</td>\r\n<td>7 EUR</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>Presented rates apply to a standard page of 1800 characters with spaces. The amount of characters in each translation is being estimated by the &ldquo;word count&rdquo; tool in Microsoft Word application. All rates are negotiable. Rates may vary depending on the length of the text and deadline. Details are to be set before the translation.</p>\r\n<table class=\"info\">\r\n<tbody>\r\n<tr>\r\n<td colspan=\"3\">Interpretation Rates</td>\r\n</tr>\r\n<tr>\r\n<td>60 minutes</td>\r\n<td>2-4 hours</td>\r\n<td>More than 4 hours</td>\r\n</tr>\r\n<tr>\r\n<td>30 EUR</td>\r\n<td>28 EUR</td>\r\n<td>Negotiable rates</td>\r\n</tr>\r\n</tbody>\r\n</table>"
+    hidden: false
+    position: '5'
+  text_6:
+    module: page
+    parent_id: '6'
+    title: Voice-over
+    context: '<p>Looking for a British voice-over to a movie? website? software? You''ve come to the right place. I will be honored to give voice to all types of recordings, both in Polish and English. Be it a commercial, presentation, movie, software or a website, I will manage the task. Rates are negotiable</p>'
+    hidden: false
+    position: '6'
+  text_7:
+    module: page
+    parent_id: '7'
+    title: Teaching
+    context: "<p>Lessons are always adjusted to student's skills and needs.</p>\r\n<table class=\"info\">\r\n<tbody>\r\n<tr>\r\n<td colspan=\"2\">Teaching English Rates</td>\r\n</tr>\r\n<tr>\r\n<td>60 minutes</td>\r\n<td>90 minutes</td>\r\n</tr>\r\n<tr>\r\n<td>12 EUR</td>\r\n<td>15 EUR</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>Rates may vary depending on the type of the lesson. Details have to be set before the first meeting. Lessons may be held at student's place, or in a place set in advance.</p>"
+    hidden: false
+    position: '7'
+  text_8:
+    module: page
+    parent_id: '8'
+    title: Contact
+    context: '<p>T''n''T Teaching and Translations<br /> Aleksandra Gajewska<br /> email: <a title="Napisz do mnie" href="mailto:gajewska7@gmail.com?subject=Zapytanie ze strony t-n-t.pl">gajewska7@gmail.com</a><br /> telefon: +48 508 449 761<br /> Szczecin, Poland</p>'
+    hidden: false
+    position: '8'

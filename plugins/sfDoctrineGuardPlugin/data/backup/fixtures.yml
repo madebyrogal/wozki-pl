@@ -1,0 +1,35 @@
+sfGuardUser:
+  User_admin:
+    first_name:     Tomasz
+    last_name:      Rogalski
+    email_address:  rogalski.tomaszek@gmail.com
+    username:       admin
+    password:       sl0neczko
+    is_super_admin: true
+    Groups:         [Group_admin]
+  User_user:
+    first_name:     Ola
+    last_name:      Gajewska
+    email_address:  gajewska7@gmail.com
+    username:       user
+    password:       user
+    is_super_admin: false
+    Groups:         [Group_user]
+
+sfGuardGroup:
+  Group_admin:
+    name:           admin
+    description:    Administrator group
+    Permissions:    [Permission_admin]
+  Group_user:
+    name:           user
+    description:    User group
+    Permissions:    [Permission_user]
+
+sfGuardPermission:
+  Permission_admin:
+    name:           admin
+    description:    Administrator permission
+  Permission_user:
+    name:           user
+    description:    User permission

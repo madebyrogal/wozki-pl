@@ -1,0 +1,603 @@
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('../../fonts/roboto-light.eot');
+    src: url('../../fonts/roboto-light.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/roboto-light.woff') format('woff'),
+        url('../../fonts/roboto-light.ttf') format('truetype'),
+        url('../../fonts/roboto-light.svg#roboto-light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+root { 
+    display: block;
+}
+
+html{
+    background-color: #ffffff !important;
+    overflow-x: hidden;
+}
+
+body{
+    margin: 0px !important;
+    padding: 0px !important;
+    background-color: #ffffff;
+    font-family: 'Roboto-Light' !important;
+    font-size: 14px !important;
+    color: #2c2c2c !important;
+    position: relative;
+}
+
+.clear{
+    clear: both;
+}
+
+.page{
+    margin: 0;
+}
+
+a:link, a:visited{
+    color: #0876f9;
+    text-decoration: none;
+}
+a:hover{
+    color: #0876f9;
+    text-decoration: underline;
+}
+a.active{
+
+}
+p{
+    font-size: 14px;
+    line-height: 1.4em;
+    margin: 0em 0em 1em 0;
+}
+ul{
+    margin: 0.4em 0;
+    padding: 0 0 0 30px;
+}
+ul li{
+    font-size: 14px;
+    line-height: 1.8em;
+}
+ol{
+    margin: 0.4em 0;
+    padding: 0 0 0 30px;
+}
+ol li{
+    font-size: 14px;
+    line-height: 1.8em;
+}
+
+h1, #sf_admin_container h1{
+    font-family: 'Roboto-Light' !important;
+    font-weight: normal !important;
+    font-size: 1.6em !important;
+    margin: 1.0em 0 !important;
+}
+
+#menuLeft{
+    float: left;
+    width: 15%;
+    margin-right: 0px;
+    background-color: #000000;
+    color: #ffffff;
+}
+#menuLeft ul{
+    margin: 0px;
+    padding: 0px 0px 0px 10px;
+}
+#menuLeft ul .groupName{
+    height: 45px;
+    line-height: 45px;
+    width: auto;
+    display: block;
+    cursor: pointer;
+    padding-left: 10px;
+}
+#menuLeft ul li{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    display: none;
+}
+#menuLeft ul.active li{
+    display: block;
+}
+#menuLeft ul.active b{
+    background-color: #0876f9;
+}
+#menuLeft ul li a, #menuLeft ul li span{
+    display: block;
+    color: #ffffff;
+    padding: 5px 5px 5px 5px;
+}
+#menuLeft ul li a{
+    text-decoration: none;
+    color: #787f84;
+}
+#menuLeft ul li a:hover{
+    text-decoration: underline;
+}
+#menuLeft ul li span{
+    color: #ffffff;
+    cursor: pointer;
+}
+#menuLeft > ul{
+    padding: 0px;
+}
+#menuLeft > ul > li > ul{
+    padding-left: 35px;
+}
+#menuLeft > ul > li ul{
+    display: none;
+}
+#menuLeft > ul > li > a, #menuLeft > ul > li > span{
+    padding: 10px 5px 10px 5px;
+    color: #ffffff;
+}
+#menuLeft > ul > li > a.menuIcon:hover, #menuLeft > ul > li > span.menuIcon:hover, #menuLeft > ul > li > a.menuIcon.active, #menuLeft > ul > li > span.menuIcon.active, #menuLeft ul .groupName:hover{
+    cursor: pointer;
+    background-color: #4d4e4f;
+    text-decoration: none;
+}
+#menuLeft > ul > li .menuIcon{
+    padding-left: 40px;
+    font-size: 12px;
+}
+#menuLeft > ul > li .menuIcon.page{
+    background: url('../../images/cms/icons/strony.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.lang{
+    background: url('../../images/cms/icons/ustawienia_jezyki.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.media_size{
+    background: url('../../images/cms/icons/ustawienia_media_rozmiary.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.product_categories{
+    background: url('../../images/cms/icons/kategorie.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.product{
+    background: url('../../images/cms/icons/produkty.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.sfGuardGroup{
+    background: url('../../images/cms/icons/uzytkownicy_grupy.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.sfGuardUser{
+    background: url('../../images/cms/icons/uzytkownicy.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.sfGuardPermission{
+    background: url('../../images/cms/icons/uprawnienia.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.news{
+    background: url('../../images/cms/icons/aktualnosci.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.article{
+    background: url('../../images/cms/icons/artykuly.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.article_category{
+    background: url('../../images/cms/icons/kategorie.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.module_cms{
+    background: url('../../images/cms/icons/moduly.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.module_group{
+    background: url('../../images/cms/icons/kategorie.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.carousel_home{
+    background: url('../../images/cms/icons/karuzela.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.gallery_1{
+    background: url('../../images/cms/icons/galeria.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.mail_data{
+    background: url('../../images/cms/icons/ustawienia_media_rozmiary.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.contact_form_1{
+    background: url('../../images/cms/icons/telefon.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.contact_form_2{
+    background: url('../../images/cms/icons/telefon.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.contact_form_3{
+    background: url('../../images/cms/icons/telefon.png') no-repeat scroll 5px center transparent;
+}
+#menuLeft > ul > li .menuIcon.product_card{
+    background: url('../../images/cms/icons/domek.png') no-repeat scroll 5px center transparent;
+}
+
+
+#contentWrapper{
+    float: left;
+    width: 80%;
+}
+
+#top{
+    border-bottom: 1px solid #e2e2e1;
+    border-right: 1px solid #e2e2e1;
+    padding-bottom: 10px;
+}
+
+#top .countrySelector{
+    position: relative;
+    float: right;
+    width: 60px;
+    min-height: 60px;
+    z-index: 100;
+    border-left: 1px solid #e2e2e1;
+}
+#top .countrySelector .currentFlag{
+    display: block;
+    width: 60px;
+    min-height: 60px;
+    background: url('../../images/icons/flagSelector.png') no-repeat scroll 40px 30px transparent;
+}
+#top .countrySelector .currentFlag a{
+    float: left;
+    display: block;
+    width: 60px;
+    min-height: 60px;
+}
+#top .countrySelector .currentFlag a span{
+    margin: 26px 0 0 14px;
+    border: 1px solid #e2e2e1;
+}
+#top .countrySelector ul.flagsList{
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: -1px;
+    margin: 0px;
+    padding: 0px;
+    border-left: 1px solid #e2e2e1;
+    border-right: 1px solid #e2e2e1;
+}
+#top .countrySelector ul.flagsList li{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+#top .countrySelector ul.flagsList li a{
+    display: block;
+    width: 60px;
+    height: 59px;
+    border-top: 1px solid #e2e2e1;
+    background-color: #ffffff;
+}
+#top .countrySelector ul.flagsList li:last-child a{
+    border-bottom: 1px solid #e2e2e1;
+}
+#top .countrySelector ul.flagsList li a:hover{
+    background-color: #e2e2e1;
+}
+#top .countrySelector ul.flagsList li a span{
+    margin: 25px 0 0 22px;
+}
+#top .countrySelector a span{
+    display: block;
+    width: 16px;
+    height: 9px;
+    border: 1px solid #e2e2e1;
+}
+#top .countrySelector a.pl_PL span{
+    background: url('../../images/icons/flags.png') no-repeat scroll 0px 0px transparent;
+}
+#top .countrySelector a.de_DE span{
+    background: url('../../images/icons/flags.png') no-repeat scroll -16px 0px transparent;
+}
+#top .countrySelector a.en_GB span{
+    background: url('../../images/icons/flags.png') no-repeat scroll -32px 0px transparent;
+}
+#top .countrySelector a.no_NO span{
+    background: url('../../images/icons/flags.png') no-repeat scroll -48px 0px transparent;
+}
+#top .countrySelector a.fr_FR span{
+    background: url('../../images/icons/flags.png') no-repeat scroll -64px 0px transparent;
+}
+#top .countrySelector a.cz_CZ span{
+    background: url('../../images/icons/flags.png') no-repeat scroll -80px 0px transparent;
+}
+#top .countrySelector a.it_IT span{
+    background: url('../../images/icons/flags.png') no-repeat scroll -96px 0px transparent;
+}
+
+#top #menuTop{
+    float: right;
+}
+#top #menuTop > ul{
+    margin: 0px;
+    padding: 0px;
+    float: right;
+}
+#top #menuTop > ul > li{
+    position: relative;
+    float: left;
+    margin: 0px;
+    padding: 17px 20px 17px 40px;
+    list-style-type: none;
+    cursor: pointer;
+}
+#top #menuTop > ul > li.menuItemTop_1{
+    background: url('../../images/cms/icons/settings1.png') no-repeat scroll 5px center transparent;
+}
+#top #menuTop > ul > li.menuItemTop_1:hover{
+    background: url('../../images/cms/icons/settings2.png') no-repeat scroll 5px center transparent;
+}
+#top #menuTop > ul > li.menuItemTop_2{
+    background: url('../../images/cms/icons/settings1.png') no-repeat scroll 5px center transparent;
+}
+#top #menuTop > ul > li.menuItemTop_2:hover{
+    background: url('../../images/cms/icons/settings2.png') no-repeat scroll 5px center transparent;
+}
+#top #menuTop > ul > li.menuItemTop_3{
+    background: url('../../images/cms/icons/admin1.png') no-repeat scroll 5px center transparent;
+}
+#top #menuTop > ul > li.menuItemTop_3:hover{
+    background: url('../../images/cms/icons/admin2.png') no-repeat scroll 5px center transparent;
+}
+#top #menuTop > ul > li:hover ul{
+    display: block;
+}
+#top #menuTop > ul > li > span{
+    display: block;
+}
+#top #menuTop > ul > li ul{
+    position: absolute;
+    display: none;
+    width: 450px;
+    margin: 0px;
+    padding: 0px;
+    top: 60px;
+    right: 0px;
+    background-color: #ffffff;
+    border-left: 1px solid #e2e2e1;
+    border-bottom: 1px solid #e2e2e1;
+    border-right: 1px solid #e2e2e1;
+}
+#top #menuTop > ul > li ul > li{
+    list-style-type: none;
+    float: left;
+    margin: 10px;
+    min-width: 120px;
+}
+#top #menuTop > ul > li ul > li a{
+    color: #000000;
+    padding-left: 20px;
+    background: url('../../images/cms/arrow.png') no-repeat scroll left center transparent;
+}
+
+#top #logo{
+    float: left;
+    margin: 17px 0 0 20px;
+}
+#top #user{
+    float: left;
+    margin: 20px 0 0 20px;
+}
+
+#top #public_box{
+    float: right;
+    height: 25px;
+    line-height: 25px;
+    margin: 16px 20px 0 0;
+    text-align: center;
+    width: 120px;
+}
+
+#top #public_box.active {
+    font-weight: bold;
+    background-color: #0876F9;
+}
+
+#top #public_box.active a{
+    color: #ffffff;
+}
+
+#content{
+    margin-left: 20px;
+}
+
+#homePage{
+
+}
+#homePage a{
+    display: block;
+    float: left;
+}
+#homePage .row1{
+
+}
+#homePage .row1 .link1{
+    margin: 0 9px 12px 0;
+}
+#homePage .row1 .link2{
+
+}
+#homePage .row2{
+
+}
+#homePage .row2 .link3{
+    margin: 0 12px 0px 0;
+}
+#homePage .row2 .link4{
+    margin: 0 12px 0px 0;
+}
+#homePage .row2 .link5{
+
+}
+
+#sf_admin_content > table, #sf_admin_content .sf_admin_list > table{
+    width: 100%;
+}
+#sf_admin_content > table > tr{
+
+}
+#sf_admin_content > table > tr > td{
+
+}
+#sf_admin_content .sf_admin_list table tr th{
+    background-color: #e3e3e3;
+}
+#sf_admin_content .sf_admin_form input[type="text"], #sf_admin_content .sf_admin_form textarea, #sf_admin_content .sf_admin_form select{
+    border-left: 1px solid #c5c5c5;
+    border-top: 1px solid #c5c5c5;
+    border-right: 1px solid #e1e1e0;
+    border-bottom: 1px solid #e1e1e0;
+    padding: 7px 5px;
+    width: 95%;
+}
+#sf_admin_content .sf_admin_form select{
+    width: auto;
+}
+.mceLayout{
+    width: 97% !important;
+}
+
+#sf_admin_bar{
+    position: absolute;
+    right: -520px;
+    top: 0px;
+    margin: 0px;
+    background-color: #000000;
+    z-index: 1000;
+    min-width: 225px;
+
+}
+#sf_admin_bar .sf_admin_filter{
+    margin-top: 50px;
+}
+#sf_admin_bar .sf_admin_filter table{
+    color: #ffffff;
+    border: 0px !important;
+}
+#sf_admin_bar .sf_admin_filter table tr{
+    background-color: transparent;
+    border: 0px;
+}
+#sf_admin_bar .sf_admin_filter table tr input[type="text"], #sf_admin_bar .sf_admin_filter table tr select{
+    background-color: #ffffff;
+    border: 1px solid #292626;
+}
+#sf_admin_bar .sf_admin_filter table td, #sf_admin_bar .sf_admin_filter table th{
+    border-top: 1px solid #292626 !important;
+    border-bottom: 1px solid #292626 !important;
+    padding: 8px 5px;
+}
+#sf_admin_bar .sf_admin_filter label, #sf_admin_bar .sf_admin_filter a{
+    color: #ffffff !important;
+}
+#filterIcon{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    z-index: 1001;
+}
+#filterIcon.left{
+    background: url('../../images/cms/icons/prevArrow.png') no-repeat scroll 0px 0px transparent;
+}
+#filterIcon.right{
+    background: url('../../images/cms/icons/nextArrow.png') no-repeat scroll 0px 0px transparent;
+}
+
+/* Login Form */
+#loginForm{
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 360px;
+    font-family: 'Roboto-Light';
+}
+#loginForm h1{
+    float: left;
+    font-weight: normal;
+    padding-left: 20px;
+    font-size: 2em !important;
+    margin: 0px 0px 10px 0px !important;
+}
+#loginForm form{
+    clear: both;
+}
+#loginForm form table{
+    border: 1px solid #e2e2e1;
+    background-color: #000000;
+    color: #ffffff;
+}
+#loginForm form table td, #loginForm form table th{
+    border: 0px;
+    font-weight: normal;
+    padding: 5px 20px;
+}
+#loginForm form table td{
+    text-align: left;
+}
+#loginForm form table th{
+    text-align: left;
+    padding-right: 0px;
+}
+#loginForm input[type="text"], #loginForm input[type="password"]{
+    border-left: 1px solid #c5c5c5;
+    border-top: 1px solid #c5c5c5;
+    border-right: 1px solid #e1e1e0;
+    border-bottom: 1px solid #e1e1e0;
+    padding: 7px 5px;
+    width: 220px;
+}
+#loginForm input[type="submit"]{
+    float: right;
+    border: 1px solid #e6e6e6;
+    padding: 10px 20px;
+    background-color: #000000;
+    font-family: 'Roboto-Light';
+    cursor: pointer;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+#loginForm #logoSignIn{
+    float: right;
+    margin: 5px 29px 0px 0px;
+}
+
+.sf_admin_td_actions li a{
+    padding: 3px 0 3px 25px !important;
+    line-height: 25px;
+}
+
+#sf_admin_container td, #sf_admin_container th{
+    font-size: 12px;
+}
+
+#sf_admin_container .sf_admin_form_row{
+    float: left;
+    width: 98%;
+}
+.foot{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #E3E3E3;
+    font-family: Tahoma;
+    line-height: 1.8em;
+}
+.foot ul.contacts{
+    float:right;
+    margin: 0;
+    padding: 0;
+}
+ul.contacts li{
+    float: left;
+    padding-left: 21px;
+    list-style: none;
+    margin-left: 10px;
+}
+ul.contacts li.phone{
+    background: url('../../images/cms/phone.png') no-repeat left center;
+}
+ul.contacts li.mail{
+    background: url('../../images/cms/mail.png') no-repeat left center;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}

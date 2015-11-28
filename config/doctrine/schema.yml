@@ -1,0 +1,380 @@
+
+#----------------------------- ADMINISTRACJA --------------------------------------------------------------------------------------------------#
+module_cms:
+  actAs:                    [Sortable]
+  columns:
+    name:                   { type: string(128), notnull: true }
+    route_name:             { type: string(128), notnull: true }
+    module_group_id:        { type: integer, notnull: true}
+    hidden:                 { type: boolean, default: 0 }
+  relations:
+    module_group:
+      class:                module_group
+      local:                module_group_id
+      foreign:              id
+      onDelete:             CASCADE
+    permission:
+      class:                sfGuardPermission
+      refClass:             module_permission
+      local:                module_id
+      foreign:              permission_id
+      onDelete:             CASCADE
+
+module_group:
+  actAs:                    [Sortable]
+  columns:
+    name:                   { type: string(128), notnull: true }
+    hidden:                 { type: boolean, default: 0 }
+  relations:
+    permission:
+      class:                sfGuardPermission
+      refClass:             module_group_permission
+      local:                module_group_id
+      foreign:              permission_id
+      onDelete:             CASCADE
+
+module_group_permission:
+  columns:
+    module_group_id:        { type: integer, notnull: true }
+    permission_id:          { type: integer, notnull: true }
+  relations:
+    module_group:
+      class:                module_group
+      local:                module_group_id
+      foreign:              id
+      onDelete:             CASCADE
+    permission:
+      class:                sfGuardPermission
+      local:                permission_id
+      foreign:              id
+      onDelete:             CASCADE
+      
+module_permission:
+  columns:
+    module_id:              { type: integer, notnull: true }
+    permission_id:          { type: integer, notnull: true }
+  relations:
+    module:
+      class:                module
+      local:                module_id
+      foreign:              id
+      onDelete:             CASCADE
+    permission:
+      class:                sfGuardPermission
+      local:                permission_id
+      foreign:              id
+      onDelete:             CASCADE
+  
+#------------------------- USTAWIENIA -------------------------------------------------------------------------------------------------------#      
+lang:
+  actAs:                    [Sortable]
+  columns:
+    name:                   { type: string(32), notnull: true }
+    flag:                   { type: string, notnull: false }
+    slug:                   { type: string(5), notnull: true }
+    hidden:                 { type: boolean, default: 0 }
+
+#Rozmiary miniaturek mediów dla danego modułu
+media_size:
+  columns:
+    module_cms_id:          { type: integer, notnull: true }
+    min1:                   { type: string(10), notnull: false }
+    min2:                   { type: string(10), notnull: false }
+    min3:                   { type: string(10), notnull: false }
+  relations:
+    module_cms:
+      class:                module_cms
+      local:                module_cms_id
+      foreign:              id
+
+# ------------------------- MAILING --------------------------------------------
+mail_data:
+  actAs:
+    I18n:
+      fields:               [subject,body]
+  columns:
+    email_from:             { type: string, notnull: false }
+    name_from:              { type: string, notnull: false }
+    subject:                { type: string, notnull: false }
+    body:                   { type: string, notnull: false }
+    
+
+# ---------------------------- MODUŁY COMMON ---------------------------------------------------------------------------------------------------#
+#Teksty - moduł uniwersalny
+text:
+  actAs:                    
+    I18n:
+      fields:               [title,context]
+  columns:
+    module:                 { type: string(128), notnull: true }
+    parent_id:              { type: integer, notnull: true }
+    title:                  { type: string(255), notnull: false }
+    context:                { type: string, notnull: true }
+    hidden:                 { type: boolean, default: 0 }
+
+#Media - moduł uniwersalny
+media:
+  actAs:
+    Sortable:
+      uniqueBy:             [parent_id]
+    I18n:
+      fields:               [title,alternative,link]
+  columns:
+    module:                 { type: string(64), notnull: false }
+    parent_id:              { type: integer, notnull: false }
+    main:                   { type: boolean, default: 0 }
+    title:                  { type: string(128), notnull: false }
+    alternative:            { type: string(128), notnull: false }
+    file:                   { type: string, notnull: true }
+    file_min1:              { type: string, notnull: false }
+    file_min2:              { type: string, notnull: false }
+    file_min3:              { type: string, notnull: false }
+    link:                   { type: string, notnull: false }
+
+#Załączniki - moduł uniwersalny
+attachment:
+  actAs:                    
+    I18n:
+      fields:               [title]
+  columns:
+    module:                 { type: string(64), notnull: false }
+    parent_id:              { type: integer, notnull: false }
+    title:                  { type: string(128), notnull: true }
+    file:                   { type: string, notnull: true }
+    extenstion:             { type: string(8), notnull: true }
+
+#Metatags - moduł uniwersalny
+meta_tag:
+  actAs:                    
+    I18n:
+      fields:               [title, description,key_words]
+  columns:
+    module:                 { type: string(64), notnull: false }
+    parent_id:              { type: integer, notnull: false }
+    title:                  { type: string, notnull: true }
+    description:            { type: string, notnull: true }
+    key_words:              { type: string, notnull: true }
+
+#Atrybuty - deficincje
+attribute_def:
+  actAs:                    
+    I18n:
+      fields:               [name, description]
+  columns:
+    module:                 { type: string(64), notnull: false }
+    parent_id:              { type: integer, notnull: false }
+    name:                   { type: string(128), notnull: true }
+    description:            { type: string(255), notnull: false }
+    type_id:                { type: integer, notnull: true }
+  relations:
+    attribute_type:
+      class:                attribute_type
+      local:                type_id
+      foreign:              id
+      
+# ----------------------------- STRONY -------------------------------------------------------------------------------------------------------#    
+page:
+  actAs:
+    Sortable:
+      uniqueBy:             [parent_id]
+    I18n:
+      fields:               [title, subtitle, meta_title, meta_keywords, meta_description, template]
+      actAs:
+        Sluggable: 
+          fields:           [title] 
+          uniqueBy:         [lang,title]
+  columns:
+    title:                  { type: string(128), notnull: true }
+    subtitle:               { type: string(128), notnull: false }
+    meta_title:             { type: string, notnull: false }
+    meta_keywords:          { type: string, notnull: false }
+    meta_description:       { type: string, notnull: false }
+    template:               { type: string(64), notnull: true }
+    layout:                 { type: string(64), notnull: true }
+    route_name:             { type: string(64), notnull: true }
+    route_hash:             { type: string(64), notnull: true, unique: true }
+    parent_id:              { type: integer, notnull: false }
+    hidden:                 { type: boolean, default: 0 }
+    not_in_menu:            { type: boolean, default: 0 }
+  relations:
+    parent:
+      class:                page
+      local:                parent_id
+      foreign:              id
+      
+# ----------------------------- PRODUKTY --------------------------------------------------------------------------------------------------#
+#Kategorie produktów
+product_categories:
+  actAs:
+    Sortable:
+      uniqueBy:             [parent_id]
+    I18n:
+      fields:               [name]
+      actAs:
+        Sluggable: 
+          fields:           [name] 
+          uniqueBy:         [lang,name]
+  columns:
+    name:                   { type: string(128), notnull: true }
+    parent_id:              { type: integer, notnull: false }
+    hidden:                 { type: boolean, default: 0 }
+  relations:
+    parent:
+      class:                product_categories
+      local:                parent_id
+      foreign:              id
+      onDelete:             CASCADE
+
+#Atrybuty - typy atrybutów
+attribute_type:
+  columns:
+    name:                   { type: string(64), notnull: true }
+
+#Atrybuty - wartości definicji
+attribute_def_value:
+  actAs:
+    I18n:
+      fields:               [value]
+  columns:
+    attribute_def_id:       { type: integer, notnull: true }
+    value:                  { type: string, notnull: true }
+  relations:
+    attribute_def:
+      class:                attribute_def
+      local:                attribute_def_id
+      foreign:              id
+      onDelete:             CASCADE
+
+#Atrybuty - wartości
+attribute_value:
+  actAs:
+    I18n:
+      fields:               [value]
+  columns:
+    attribute_def_id:       { type: integer, notnull: true }
+    attribute_def_value_id: { type: integer, notnull: false }
+    attribute_type_id:      { type: integer, notnull: true }
+    product_id:             { type: integer, notnull: true }
+    value:                  { type: string, notnull: false }
+  relations:
+    attribute_def:
+      class:                attribute_def
+      local:                attribute_def_id
+      foreign:              id
+      onDelete:             CASCADE
+    attribute_def_value:
+      class:                attribute_def_value
+      local:                attribute_def_value_id
+      foreign:              id
+      onDelete:             CASCADE
+    attribute_type:
+      class:                attribute_type
+      local:                attribute_type_id
+      foreign:              id
+      onDelete:             CASCADE
+      onUpdate:             CASCADE
+    product:
+      class:                product
+      local:                product_id
+      foreign:              id
+      onDelete:             CASCADE
+      
+product:
+  actAs:
+    Sortable:
+      uniqueBy:             [category_id]
+    I18n:
+      fields:               [name, info, price]
+      actAs:
+        Sluggable: 
+          fields:           [name] 
+          uniqueBy:         [lang,name]
+  columns:
+    category_id:            { type: integer, notnull: true }
+    name:                   { type: string(255), notnull: true }
+    info:                   { type: string, notnull: false }
+    price:                  { type: float, notnull: false }
+    promotion:              { type: boolean, default: 0 }
+    hidden:                 { type: boolean, default: 0 }
+  relations:
+    category:
+      class:                product_categories
+      local:                category_id
+      foreign:              id
+      onDelete:             CASCADE
+
+# ----------------------- AKTUALNOSCI -------------------------------------------
+news:
+  actAs:                    
+    Timestampable:          ~
+    I18n:
+      fields:               [title, sneak_peak, body]
+      actAs:
+        Sluggable: 
+          fields:           [title] 
+          uniqueBy:         [lang,title]
+  columns:
+    title:                  { type: string(255), notnull: true }
+    date_from:              { type: date, notnull: true }
+    sneak_peak:             { type: string, notnull: false }
+    body:                   { type: string, notnull: false }
+    hidden:                 { type: boolean, default: 0 }
+      
+# ------------------------ ARTYKULY ---------------------------------------------
+# Artykuły
+article:
+  actAs:                    
+    Timestampable:          ~
+    I18n:
+      fields:               [title,sneak_peak,body]
+      actAs:
+        Sluggable:
+          fields:           [title]
+          uniqueBy:         [lang, title]
+  columns:
+    title:                  { type: string(255), notnull: true }
+    date_from:              { type: date, notnull: true }
+    sneak_peak:             { type: string, notnull: false }
+    body:                   { type: string, notnull: false }
+    article_category_id:    { type: integer, notnull: false }
+    author:                 { type: string(128), notnull: false }
+    hidden:                 { type: boolean, default: 0 }
+  relations:
+    category:
+      class:                article_category
+      local:                article_category_id
+      foreign:              id
+      onDelete:             SET NULL
+    author:
+      class:                author
+      local:                author_id
+      foreign:              id
+      onDelete:             SET NULL
+
+# Kategorie artykulow
+article_category:
+  actAs:
+    I18n:
+      fields:               [name]
+      actAs:
+        Sluggable:
+          fields:           [name]
+          uniqueBy:         [lang, name]
+  columns:
+    name:                   { type: string(255), notnull: true }
+    hidden:                 { type: boolean, default: 0 }
+
+# ---------------------------- NEWSLETTER --------------------------------------
+# Adresy newsletter'a
+newsletter_address:
+  actAs:                    [Timestampable]
+  columns:
+    email:                  { type: string(255), notnull: true, unique: true }
+    hash:                   { type: string(40), notnull: false }
+    confirm:                { type: boolean, default: 0 }
+    
+# ---------------------------- GALERIA -----------------------------------------
+gallery_1:
+  columns:
+    name:                   { type: string(255), notnull: true }
+    hidden:                 { type: boolean, default: 0 }

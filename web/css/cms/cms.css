@@ -1,0 +1,26 @@
+/* ------------------------- COMMON ------------------------------------------- */
+.CMSmenu ul li{
+  list-style: none;  
+}
+
+.CMSmenu ul{
+  margin: 10px 0 5px 0;
+}
+
+.margingT{
+  margin-top: 10px;
+}
+
+.clear{
+  clear: both;
+}
+
+/* ------------------------- JEZYKI -------------------------------------------- */
+ul.langBox li{
+  float: left;
+  margin-left: 2px;
+}
+
+ul.langBox li img.active{
+  border: 2px solid #000000;
+}
