@@ -32,6 +32,10 @@ offer:
 offer_new:
   url:      /oferta/5/wozki-widlowe-nowe
   param:    { module: offer, action: new }
+
+offer_parts:
+  url:      /oferta/6/czesci-do-wozkow-widlowych
+  param:    { module: offer, action: parts }
   
 offer_use:
   url:      /oferta/1/wozki-widlowe-uzywane
