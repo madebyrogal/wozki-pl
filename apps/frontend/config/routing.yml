@@ -1,13 +1,16 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
+localize_homepage:
+  url:      /
+  param:    { module: main, action: index }
 # Root
 root:
-  url:      /
+  url:      /:sf_culture
   param:    { module: main, action: index }
 # Home
 homepage:
-  url:      /
+  url:      /:sf_culture
   param:    { module: main, action: index }
 
 # Zmiana jezyka
@@ -19,98 +22,98 @@ changeLang:
 
 # Strony statyczne
 staticPage:
-  url:      /:id/:slug.html
+  url:      /:sf_culture/:id/:slug.html
   class:    sfDoctrineRoute
   options:  { model: page, type: object }
   param:    { module: page, action: showPage}
 
 # Oferta
 offer:
-  url:      /oferta/1/wozki-widlowe-uzywane
+  url:      /:sf_culture/oferta/1/wozki-widlowe-uzywane
   param:    { module: offer, action: index }
-
+  
 offer_new:
-  url:      /oferta/5/wozki-widlowe-nowe
+  url:      /:sf_culture/oferta/5/wozki-widlowe-nowe
   param:    { module: offer, action: new }
-
-offer_parts:
-  url:      /oferta/6/czesci-do-wozkow-widlowych
-  param:    { module: offer, action: parts }
   
 offer_use:
-  url:      /oferta/1/wozki-widlowe-uzywane
-  param:    { module: offer, action: use }
+  url:      /:sf_culture/oferta/1/wozki-widlowe-uzywane
+  param:    { module: offer, action: use } 
+  
+offer_parts:
+  url:      /:sf_culture/oferta/6/czesci-do-wozkow-widlowych
+  param:    { module: offer, action: parts }
 
 offer_equipment:
-  url:      /oferta/3/osprzet-do-wozkow-widlowych
+  url:      /:sf_culture/oferta/3/osprzet-do-wozkow-widlowych
   param:    { module: offer, action: equipment }
   
 offer_tires:
-  url:      /oferta/2/opony-do-wozkow-widlowych
+  url:      /:sf_culture/oferta/2/opony-do-wozkow-widlowych
   param:    { module: offer, action: tires }
   
 offer_promotion:
-  url:      /promocja-wozkow-widlowych.html
+  url:      /:sf_culture/promocja-wozkow-widlowych.html
   param:    { module: offer, action: promotion }
   
 # Oferta - kategoria
 offer_category:
-  url:      /oferta/:id/:slug/:drive/:driveId
+  url:      /:sf_culture/oferta/:id/:slug/:drive/:driveId
   class:    sfDoctrineRoute
   options:  { model: product_categories, type: object }
   param:    { module: offer, action: productList, drive: ~, driveId: ~ }
   
 # Oferta - product
 offer_product:
-  url:      /produkt/:id/:slug.html
+  url:      /:sf_culture/produkt/:id/:slug.html
   class:    sfDoctrineRoute
   options:  { model: product, type: object }
   param:    { module: offer, action: productDetails }
   
 # Kontakt
 contact:
-  url:      /kontakt.html
+  url:      /:sf_culture/kontakt.html
   param:    { module: contact, action: index }
 
 # Aktualnosci
 news:
-  url:      /aktualnosci.html
+  url:      /:sf_culture/aktualnosci.html
   class:    sfDoctrineRoute
   options:  { model: page, type: object }
   param:    { module: news, action: index }
 
 # Aktualnosci - pokaz
 news_show:
-  url:      /aktualnosci/:id/:slug.html
+  url:      /:sf_culture/aktualnosci/:id/:slug.html
   class:    sfDoctrineRoute
   options:  { model: news, type: object }
   param:    { module: news, action: show }
 
 # Artykuly
 article:
-  url:      /artykuly.html
+  url:      /:sf_culture/artykuly.html
   class:    sfDoctrineRoute
   options:  { model: page, type: object }
   param:    { module: article, action: index }
   
 # Aktualnosci - pokaz
 article_show:
-  url:      /artykuly/:id/:slug.html
+  url:      /:sf_culture/artykuly/:id/:slug.html
   class:    sfDoctrineRoute
   options:  { model: article, type: object }
   param:    { module: article, action: show }
 
 # Newsletter
 newsletter:
-  url:      /newsletter.html
+  url:      /:sf_culture/newsletter.html
   param:    { module: newsletter, action: index }
   
 # Szukajka
 search:
-  url:      /szukaj.html
+  url:      /:sf_culture/szukaj.html
   param:    { module: search, action: index }
   
 # Galeria
 gallery:
-    url:      /galeria-wozkow-widlowych.html
+    url:      /:sf_culture/galeria-wozkow-widlowych.html
     param:    { module: gallery, action: index }

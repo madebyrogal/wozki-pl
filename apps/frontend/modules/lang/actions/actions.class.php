@@ -10,28 +10,29 @@
  */
 class langActions extends sfActions
 {
- /**
-  * Executes index action
-  *
-  * @param sfRequest $request A request object
-  */
-  public function executeIndex(sfWebRequest $request)
-  {
-    
-  }
-  
-  public function executeChangeLang(sfWebRequest $request){
-    $this->deleteDir( sfConfig::get('sf_cache_dir') . '/frontend/prod/' );
-    $lang = $this->getRoute()->getObject();
-    $this->getUser()->setCulture( $lang->getSlug() );
-    $this->getUser()->setAttribute( 'langId', $lang->getId() );
-    $this->redirect($request->getReferer());
-  }
-  
-  public static function deleteDir($dirPath) {
-//        if (!is_dir($dirPath)) {
-//            throw new InvalidArgumentException("$dirPath must be a directory");
-//        }
+
+    /**
+     * Executes index action
+     *
+     * @param sfRequest $request A request object
+     */
+    public function executeIndex(sfWebRequest $request)
+    {
+        
+    }
+
+    public function executeChangeLang(sfWebRequest $request)
+    {
+        $this->deleteDir(sfConfig::get('sf_cache_dir') . '/frontend/prod/');
+        $lang = $this->getRoute()->getObject();
+        $this->getUser()->setCulture($lang->getSlug());
+        $this->getUser()->setAttribute('langId', $lang->getId());
+        $urlWithNewCulture = $this->changeLangInReferer($request->getReferer(), $lang->getSlug());
+        $this->redirect($urlWithNewCulture);
+    }
+
+    public static function deleteDir($dirPath)
+    {
         if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
             $dirPath .= '/';
         }
@@ -43,6 +44,25 @@ class langActions extends sfActions
                 unlink($file);
             }
         }
-        if(is_dir($dirPath)) rmdir($dirPath);
+        if (is_dir($dirPath)) {
+            rmdir($dirPath);
+        }
     }
+    
+    private function changeLangInReferer($refererURL, $newLangSlug)
+    {
+        $envPrefix = sfConfig::get('sf_environment') === 'dev' ? 'frontend_dev.php' : '';
+        $pareseReferer = parse_url($refererURL);
+        $path = explode('/', substr($pareseReferer['path'], 1));
+        if ($path[0] === $envPrefix) {
+            array_shift($path);
+        }
+        $path[0] = $newLangSlug;
+        $pareseReferer['path'] = "$envPrefix/" . join('/', $path);
+        $newURLReferer = $pareseReferer['scheme'] . '://' . $pareseReferer['host'] . $pareseReferer['path'];
+        $newURLReferer .= $pareseReferer['query'] ? '?' . $pareseReferer['query'] : '';
+
+        return $newURLReferer;
+    }
+
 }
