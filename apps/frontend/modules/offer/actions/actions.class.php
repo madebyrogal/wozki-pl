@@ -183,5 +183,11 @@ class offerActions extends sfActions
 
         $this->getResponse()->setTitle($T["pl"]["name"]);
     }
+    
+    public function executeNewBuy(sfWebRequest $request)
+    {
+        $category = product_categoriesTable::getInstance()->findOneBy('id', 7);
+        $this->productList($category, $request->getParameter('page', 1), 'productListWithoutPicture');
+    }
 
 }

@@ -35,6 +35,10 @@ offer:
 offer_new:
   url:      /:sf_culture/oferta/5/wozki-widlowe-nowe
   param:    { module: offer, action: new }
+
+offer_new_buy:
+  url:      /:sf_culture/oferta/7/nowo-nabyte
+  param:    { module: offer, action: newBuy }
   
 offer_use:
   url:      /:sf_culture/oferta/1/wozki-widlowe-uzywane
@@ -55,7 +59,7 @@ offer_tires:
 offer_promotion:
   url:      /:sf_culture/promocja-wozkow-widlowych.html
   param:    { module: offer, action: promotion }
-  
+
 # Oferta - kategoria
 offer_category:
   url:      /:sf_culture/oferta/:id/:slug/:drive/:driveId
