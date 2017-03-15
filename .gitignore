@@ -1,5 +1,12 @@
-/nbproject
+#CACHE, LOGS, CONFIGS
 /cache
+!/cache/.gitkeep
 /log
-/web/useruploads
+!/log/.gitkeep
 /config/databases.yml
+
+#ASSETS
+/web/useruploads
+
+#OTHERS
+/nbproject
