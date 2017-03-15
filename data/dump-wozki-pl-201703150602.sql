@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.46, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Linux (x86_64)
 --
--- Host: localhost    Database: wozki_pl_dev
+-- Host: localhost    Database: wozki-pl
 -- ------------------------------------------------------
--- Server version	5.5.46-0ubuntu0.14.04.2
+-- Server version	5.7.17-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -931,7 +931,7 @@ CREATE TABLE `product_categories` (
   UNIQUE KEY `product_categories_position_sortable_idx` (`position`,`parent_id`),
   KEY `parent_id_idx` (`parent_id`),
   CONSTRAINT `product_categories_parent_id_product_categories_id` FOREIGN KEY (`parent_id`) REFERENCES `product_categories` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -940,7 +940,7 @@ CREATE TABLE `product_categories` (
 
 LOCK TABLES `product_categories` WRITE;
 /*!40000 ALTER TABLE `product_categories` DISABLE KEYS */;
-INSERT INTO `product_categories` VALUES (1,NULL,0,1),(2,NULL,0,3),(3,NULL,0,4),(5,NULL,0,2),(6,NULL,0,5);
+INSERT INTO `product_categories` VALUES (1,NULL,0,1),(2,NULL,0,3),(3,NULL,0,4),(5,NULL,0,2),(6,NULL,0,5),(7,NULL,0,6);
 /*!40000 ALTER TABLE `product_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -968,7 +968,7 @@ CREATE TABLE `product_categories_translation` (
 
 LOCK TABLES `product_categories_translation` WRITE;
 /*!40000 ALTER TABLE `product_categories_translation` DISABLE KEYS */;
-INSERT INTO `product_categories_translation` VALUES (6,'Teile','de','czesci-do-wozkow-widlowych'),(6,'Parts','en','czesci-do-wozkow-widlowych'),(6,'Części','pl','czesci-do-wozkow-widlowych'),(6,'части','ru','czesci-do-wozkow-widlowych'),(3,'Equipment','en','Equipment'),(1,'Gebraucht','de','Gebraucht'),(2,'Opony','pl','opony-do-wozkow-widlowych'),(3,'Osprzęt','pl','osprzet-do-wozkow-widlowych'),(2,'Reifen ','de','Reifen '),(2,'Tires','en','Tires'),(1,'Used','en','Used'),(5,'Neu','de','wozki-widlowe-nowe'),(5,'New','en','wozki-widlowe-nowe'),(5,'Nowe','pl','wozki-widlowe-nowe'),(5,'новый','ru','wozki-widlowe-nowe'),(1,'Używane','pl','wozki-widlowe-uzywane'),(3,'Zubehör 	','de','Zubehör 	'),(3,'Дополнительное-оборудование','ru','Дополнительное-оборудование'),(1,'используемый','ru','используемый'),(2,'Шины','ru','Шины');
+INSERT INTO `product_categories_translation` VALUES (7,'вновь приобретенные','ru',''),(6,'Teile','de','czesci-do-wozkow-widlowych'),(6,'Parts','en','czesci-do-wozkow-widlowych'),(6,'Części','pl','czesci-do-wozkow-widlowych'),(6,'части','ru','czesci-do-wozkow-widlowych'),(3,'Equipment','en','Equipment'),(1,'Gebraucht','de','Gebraucht'),(7,'Neu erworbenen','de','neu-erworbenen'),(7,'New buy','en','new-buy'),(7,'Nowo nabyte','pl','nowo-nabyte'),(2,'Opony','pl','opony-do-wozkow-widlowych'),(3,'Osprzęt','pl','osprzet-do-wozkow-widlowych'),(2,'Reifen ','de','Reifen '),(2,'Tires','en','Tires'),(1,'Used','en','Used'),(5,'Neu','de','wozki-widlowe-nowe'),(5,'New','en','wozki-widlowe-nowe'),(5,'Nowe','pl','wozki-widlowe-nowe'),(5,'новый','ru','wozki-widlowe-nowe'),(1,'Używane','pl','wozki-widlowe-uzywane'),(3,'Zubehör 	','de','Zubehör 	'),(3,'Дополнительное-оборудование','ru','Дополнительное-оборудование'),(1,'используемый','ru','используемый'),(2,'Шины','ru','Шины');
 /*!40000 ALTER TABLE `product_categories_translation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1179,7 +1179,7 @@ CREATE TABLE `sf_guard_user` (
 
 LOCK TABLES `sf_guard_user` WRITE;
 /*!40000 ALTER TABLE `sf_guard_user` DISABLE KEYS */;
-INSERT INTO `sf_guard_user` VALUES (1,'Tomasz','Rogalski','rogalski.tomaszek@gmail.com','admin','sha1','1d494bdbba5a19a90d24ff50abb520ce','9adad637317cc4ba87601de12b209d121be58a70',1,1,'2015-06-15 22:56:18','2012-11-14 20:33:26','2015-06-15 22:56:18'),(2,'Leszek','Węgrzeniejewski','wozkistrzalkowo@gmail.com','user','sha1','27cdb87258c5b45ac6d28d85ff2ff2af','4a1c78254b5afb1ad92b57ce309acb006b99e2b1',1,0,'2015-10-26 14:56:56','2012-11-14 20:33:26','2015-10-26 14:56:56'),(3,'Joanna','Rogalska','rogalska.joasia@gmail.com','asia','sha1','4963b9ec301b197d994a5acbd350a844','93ebd8811fb1b117fd228d42d497a98554e80e5a',1,0,NULL,'2013-02-27 13:34:12','2013-02-27 13:34:12'),(5,'tense','tense','w.ganicz@grupatense.pl','tense','sha1','','5d8798fd55bbfab58b739e3a03d64534cbfeffad',1,1,'2015-06-30 10:23:25','2012-11-14 20:33:26','2015-06-30 10:23:25');
+INSERT INTO `sf_guard_user` VALUES (1,'Tomasz','Rogalski','rogalski.tomaszek@gmail.com','admin','sha1','1d494bdbba5a19a90d24ff50abb520ce','9adad637317cc4ba87601de12b209d121be58a70',1,1,'2017-03-13 22:44:38','2012-11-14 20:33:26','2017-03-13 22:44:38'),(2,'Leszek','Węgrzeniejewski','wozkistrzalkowo@gmail.com','user','sha1','27cdb87258c5b45ac6d28d85ff2ff2af','4a1c78254b5afb1ad92b57ce309acb006b99e2b1',1,0,'2015-10-26 14:56:56','2012-11-14 20:33:26','2015-10-26 14:56:56'),(3,'Joanna','Rogalska','rogalska.joasia@gmail.com','asia','sha1','4963b9ec301b197d994a5acbd350a844','93ebd8811fb1b117fd228d42d497a98554e80e5a',1,0,NULL,'2013-02-27 13:34:12','2013-02-27 13:34:12'),(5,'tense','tense','w.ganicz@grupatense.pl','tense','sha1','','5d8798fd55bbfab58b739e3a03d64534cbfeffad',1,1,'2015-06-30 10:23:25','2012-11-14 20:33:26','2015-06-30 10:23:25');
 /*!40000 ALTER TABLE `sf_guard_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1295,7 +1295,7 @@ INSERT INTO `text_translation` VALUES (1,'Über uns','<p><span id=\"result_box\"
 UNLOCK TABLES;
 
 --
--- Dumping routines for database 'wozki_pl_dev'
+-- Dumping routines for database 'wozki-pl'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -1307,4 +1307,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-01-11  7:28:34
+-- Dump completed on 2017-03-15  6:02:15
