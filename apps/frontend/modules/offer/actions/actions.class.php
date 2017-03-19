@@ -109,6 +109,10 @@ class offerActions extends sfActions
                 //Pobranie napędu dla nowych
                 $this->attribute = attribute_defTable::getAttributeById(20);
                 $this->attributeDefValues = attribute_def_valueTable::getAttributeDefValues(20);
+            } elseif($this->category->getId() == 7) {
+                //Pobranie napędu dla nowych nabytych
+                $this->attribute = attribute_defTable::getAttributeById(30);
+                $this->attributeDefValues = attribute_def_valueTable::getAttributeDefValues(30);
             }
             $this->driveId = 0;
         } else {

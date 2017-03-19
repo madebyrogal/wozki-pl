@@ -25,6 +25,10 @@ class offerComponents extends sfComponents{
     $this->productAttributes = attribute_valueTable::getProductAttributesFrontEnd($this->product);
   }
   
+  public function executeProductListDetailsWithoutPicture(){
+    $this->productAttributes = attribute_valueTable::getProductAttributesFrontEnd($this->product);
+  }
+  
   public function executeEquipmentListDetails(){
     $this->productAttributes = attribute_valueTable::getProductAttributesFrontEnd($this->product);
   }
