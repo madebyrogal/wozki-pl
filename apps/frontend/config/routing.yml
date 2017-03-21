@@ -37,7 +37,7 @@ offer_new:
   param:    { module: offer, action: new }
 
 offer_new_buy:
-  url:      /:sf_culture/oferta/7/nowo-nabyte
+  url:      /:sf_culture/oferta/7/swiezo-kupione
   param:    { module: offer, action: newBuy }
   
 offer_use:
