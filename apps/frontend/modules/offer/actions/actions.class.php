@@ -39,7 +39,7 @@ class offerActions extends sfActions
 
     public function executeProductList(sfWebRequest $request)
     {
-
+       
         if ($request->getParameter('drive') && !$request->getParameter('driveId') || !is_numeric($request->getParameter('driveId'))) {
             $this->forward404();
             die();
@@ -58,9 +58,13 @@ class offerActions extends sfActions
                 //Pobranie napędu dla nowych
                 $this->attribute = attribute_defTable::getAttributeById(20);
                 $this->attributeDefValues = attribute_def_valueTable::getAttributeDefValues(20);
+            } elseif ($this->category->getId() == 7) {
+                //Pobranie napędu dla swiezo kupionych
+                $this->attribute = attribute_defTable::getAttributeById(30);
+                $this->attributeDefValues = attribute_def_valueTable::getAttributeDefValues(30);
             }
             $values = array();
-            $A = $this->attributeDefValues->toArray();
+            $A = $this->attributeDefValues ? $this->attributeDefValues->toArray() : [];
             foreach ($A as $value)
                 $values[] = $value['id'];
 
@@ -74,13 +78,13 @@ class offerActions extends sfActions
                 }
                 if ($this->category->getId() == 1) {
                     //Pobranie wozków używanych
-
                     $productIds = attribute_valueTable::getProductWithAttributeValue(4, $this->driveId);
                 } elseif ($this->category->getId() == 5) {
-
-
                     //Pobranie wozków nowych
                     $productIds = attribute_valueTable::getProductWithAttributeValue(20, $this->driveId);
+                } elseif ($this->category->getId() == 7) {
+                    //Pobranie wozków świeżo kupionych
+                    $productIds = attribute_valueTable::getProductWithAttributeValue(30, $this->driveId);
                 }
             }
         } else {
@@ -179,10 +183,6 @@ class offerActions extends sfActions
     {
         $this->product = $this->getRoute()->getObject();
         $this->category = $this->product->category;
-        /* 	ob_start();
-          var_dump( ($this->product));
-          $foo = ob_get_clean(); */
-        //	file_put_contents("log",$foo);
         $T = $this->product->Translation->toArray();
 
         $this->getResponse()->setTitle($T["pl"]["name"]);
