@@ -14,7 +14,6 @@
        title="<?= $promoPage->getTitle()?>"
        <?php if(isset($activeCategoryId) && $activeCategoryId == 'offer_promotion'):?>class="active<?php endif?>">
        <?= $promoPage->getTitle()?>
-    </a> 
-    <span>(<?= __("gorące oferty")?>)</span>
+    </a>
   </li>
 </ul>
