@@ -36,7 +36,7 @@
             <?php foreach ($pager->getResults() as $product): ?>
                 <li>
                     <a title="" href="<?= url_for('offer_product', $product) ?>">
-                        <div class="productDetails">
+                        <div>
                             <?= include_component('offer', 'productListDetailsWithoutPicture', array('product' => $product)) ?>
                             <div class="description"><?= strip_tags($product->getInfo(ESC_RAW)) ?></div>
                         </div>
