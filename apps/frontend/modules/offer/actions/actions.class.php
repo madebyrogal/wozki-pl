@@ -64,7 +64,7 @@ class offerActions extends sfActions
                 $this->attributeDefValues = attribute_def_valueTable::getAttributeDefValues(30);
             }
             $values = array();
-            $A = $this->attributeDefValues ? $this->attributeDefValues->toArray() : [];
+            $A = $this->attributeDefValues ? $this->attributeDefValues->toArray() : array();
             foreach ($A as $value)
                 $values[] = $value['id'];
 
